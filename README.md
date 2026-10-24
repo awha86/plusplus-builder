@@ -20,3 +20,9 @@ npm run build
 ```
 
 I browseren kan scenen drejes med musen eller touchpad, zoomes med scroll og flyttes med højreklik/shift-drag.
+
+## GitHub Pages
+
+En GitHub Actions-workflow bygger appen og udgiver den til Pages ved push til `main` eller manuel start af workflowen. Første gang skal repositoryts **Settings → Pages → Build and deployment → Source** sættes til **GitHub Actions**. Når workflowen er kørt færdig, findes prototypen på https://awha86.github.io/plusplus-builder/.
+
+Pages-builden bruger projektets `/plusplus-builder/`-sti; den almindelige lokale udviklingsserver bruger fortsat roden.
