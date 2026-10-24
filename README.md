@@ -5,7 +5,7 @@ Måleprotokol for fysisk reference: [docs/maaleprotokol.md](docs/maaleprotokol.m
 
 ## 3D-prototype
 
-Den første Three.js-scene viser en tydeligt markeret placeholder, ikke en målepræcis Plus-Plus-brik. Start den lokalt med:
+Three.js-scenen viser en parametrisk voxelmodel baseret på de brugerbekræftede mål og det dokumenterede 5 × 3-gitter. Målene er ikke uafhængigt fysisk målt, og kontur, afrundinger og samling er ikke verificeret. Scenens geometri kan derfor ikke bruges som bevis for en præcis eller byggelig Plus-Plus-brik. Start appen lokalt med:
 
 ```sh
 cd app
