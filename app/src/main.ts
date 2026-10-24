@@ -14,13 +14,13 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main>
     <section class="intro" aria-labelledby="page-title">
       <div>
-        <p class="eyebrow">FØRSTE VISUELLE PROTOTYPE</p>
-        <h1 id="page-title">Undersøg en 3D-brik</h1>
-        <p class="description">Scenen afprøver kamera, lys og navigation, før den parametriske brikgeometri sættes ind.</p>
+        <p class="eyebrow">PLUS-PLUS MINI · 3D-MODEL</p>
+        <h1 id="page-title">Se brikken fra alle sider</h1>
+        <p class="description">Drej den afrundede Mini-brik, og se dens karakteristiske krydsform i 3D.</p>
       </div>
       <div class="notice" role="note">
         <span class="notice-icon" aria-hidden="true">i</span>
-        <p><strong>Placeholder — ikke en verificeret Plus-Plus-model.</strong><br>Form og proportioner er kun illustrative og ikke målfast.</p>
+        <p><strong>Form efter den oplyste 5 × 3-gittermodel.</strong><br>Mål, afrundinger og samling er ikke fysisk verificeret.</p>
       </div>
     </section>
     <section class="viewer" aria-label="Interaktiv 3D-scene">
@@ -30,8 +30,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
       <div class="scene" id="scene"></div>
       <div class="scene-caption">
-        <span>Illustrativ blok-placeholder</span>
-        <span>Ingen samlingsregler eller bygbarhed er modelleret</span>
+        <span>Afrundet Mini-brik · 9 moduler</span>
+        <span>Målestok og samlingsregler er ikke verificeret</span>
       </div>
     </section>
   </main>
@@ -50,7 +50,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputColorSpace = THREE.SRGBColorSpace
 renderer.toneMapping = THREE.ACESFilmicToneMapping
 renderer.toneMappingExposure = 1.15
-renderer.domElement.setAttribute('aria-label', 'Interaktiv 3D-visning af en illustrativ placeholder-brik')
+renderer.domElement.setAttribute('aria-label', 'Interaktiv 3D-visning af en afrundet Plus-Plus Mini-brik')
 sceneHost.append(renderer.domElement)
 
 scene.add(new THREE.HemisphereLight('#e8f2ff', '#33424e', 2.2))
