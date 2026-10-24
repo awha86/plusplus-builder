@@ -25,7 +25,7 @@ Formålet er at indsamle nok reference til senere at beskrive brikkens omrids og
 
 ## Oplyste modelmål — Mini
 
-Følgende geometri er oplyst af brugeren til brug som programmeringsgrundlag. Den beskriver en 5 × 3 gittermodel med kubiske moduler på 4 mm. Kilden er brugerens specifikation, ikke uafhængig måling eller fysisk kontrol.
+Følgende geometri er oplyst af brugeren til brug som programmeringsgrundlag. Brugeren har siden bekræftet, at de oplyste ydre mål og modulmål er korrekte. Bekræftelsen er brugerens, ikke en uafhængig måling eller fysisk kontrol. Geometrien beskriver en 5 × 3 gittermodel med kubiske moduler på 4 mm.
 
 - Ydre mål: 20 mm (X) × 12 mm (Y) × 4 mm (Z).
 - Modulstørrelse: 4 × 4 × 4 mm.
@@ -40,7 +40,7 @@ Følgende geometri er oplyst af brugeren til brug som programmeringsgrundlag. De
 - I alt 9 moduler: 5 i midterstriben, 2 i øverste række og 2 i nederste række. Hele gitteret har ét modul i Z-retningen.
 - Koordinater med origo i gitterets nederste venstre hjørne: midterrækken har X-intervallerne 0–4, 4–8, 8–12, 12–16 og 16–20 mm ved Y=4–8 mm; de fire øvrige moduler ligger ved X=4–8 og 12–16 mm, med Y=0–4 mm eller Y=8–12 mm. Alle moduler ligger ved Z=0–4 mm.
 
-Disse værdier kan bruges som en foreløbig, deterministisk voxel-geometri. Indtil de er sammenholdt med en fysisk brik, skal de mærkes `brugeroplyst/ikke verificeret` og ikke `maalt`. De siger heller ikke noget om brikkens faktiske kurver eller mekaniske samling.
+Disse værdier kan bruges som en foreløbig, deterministisk voxel-geometri. Ydre mål og modulmål skal mærkes `brugerbekræftet`; de er ikke uafhængigt målt. Konturen og mekanisk samling er heller ikke fysisk verificeret.
 
 ## Registrering
 
@@ -48,6 +48,7 @@ Brug skabelonen herunder. Angiv måleenhed og metode. For hver værdi vælges pr
 
 - `maalt`: direkte aflæst på den fysiske brik.
 - `brugeroplyst`: oplyst af brugeren, men ikke uafhængigt fysisk verificeret.
+- `brugerbekræftet`: brugeren har bekræftet værdien; den er ikke uafhængigt fysisk målt.
 - `estimat`: anslået fra et billede eller en indirekte metode; ikke verificeret.
 - `ukendt`: endnu ikke målt eller kan ikke bestemmes.
 
@@ -82,7 +83,7 @@ Den oplyste voxel-geometri kan registreres særskilt sådan:
 ```json
 {
   "source": "user-provided",
-  "status": "brugeroplyst",
+  "status": "brugerbekræftet",
   "unit": "mm",
   "overall_size_xyz": [20, 12, 4],
   "voxel_size_xyz": [4, 4, 4],
@@ -91,16 +92,16 @@ Den oplyste voxel-geometri kan registreres særskilt sådan:
     [1, 1, 1, 1, 1],
     [0, 1, 0, 1, 0]
   ],
-  "physical_verification": "ukendt"
+  "user_confirmation": "confirmed dimensions",
+  "independent_physical_measurement": "not performed"
 }
 ```
 
-## Det skal stadig leveres fra en fysisk brik
+## Status for fysisk reference
 
-- Variant/størrelse, hvis den kendes, og om brikken er beskadiget.
-- Tre aflæsninger af samlet længde og største bredde.
-- Tre tykkelsesmålinger ved hver af de tre angivne positioner.
-- En kort beskrivelse af omridset og eventuelle forskelle mellem over- og underside.
-- Billederne på tjeklisten, hvis det er muligt. Hvis ikke, notér det; manglende billeder udfyldes ikke med antagelser.
+- Brugeren har oplyst og bekræftet ydre mål og modulmålene ovenfor; de behøver ikke indtastes igen. De er fortsat ikke uafhængigt fysisk målt.
+- Variant/størrelse og eventuelle skader kan oplyses, hvis det er relevant og kendt.
+- Referencefotos af top, bund og sideprofiler med målestok er ønskelige til senere fysisk sammenligning, men kan ikke vedhæftes lige nu. De er ikke en forudsætning for at køre Three.js-placeholderen.
+- Kontur og eventuelle forskelle mellem over- og underside er fortsat baseret på den beskrevne gittermodel, ikke uafhængigt observeret.
 
-De oplyste modelmål kan bruges som foreløbig geometri, men en fysisk sammenligning er stadig nødvendig for at kalde dem verificerede specifikationer. Denne protokol siger ikke noget om, hvorvidt brikker kan samles stabilt.
+Der er ikke påstået verificerede samlingsregler eller stabilitet.

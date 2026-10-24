@@ -1,5 +1,5 @@
 {
-  "name": "plusplus-builder-vite-scaffold",
+  "name": "plusplus-builder",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "typescript": "~6.0.3",
-    "vite": "^8.3.4"
+    "@types/three": "0.186.0",
+    "typescript": "6.0.3",
+    "vite": "8.3.5"
+  },
+  "dependencies": {
+    "three": "0.186.1"
   }
 }
